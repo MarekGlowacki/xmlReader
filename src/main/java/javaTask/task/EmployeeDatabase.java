@@ -1,5 +1,4 @@
 package javaTask.task;
-import java.io.IOException;
 
 public class EmployeeDatabase {
 
