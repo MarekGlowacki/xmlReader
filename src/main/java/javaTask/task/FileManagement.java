@@ -8,7 +8,7 @@ public class FileManagement {
     private static final String EXTERNAL_FOLDER = "external";
     private static final String INTERNAL_FOLDER = "internal";
 
-    public static void addEmployeeToFile(Person person, EmployeeDatabase.Type type) throws IOException {
+    public static void addEmployeeToFile(Person person, EmployeeDatabase.Type type) {
         String folder = (type == EmployeeDatabase.Type.EXTERNAL) ? EXTERNAL_FOLDER : INTERNAL_FOLDER;
         File directory = new File(folder);
         if (!directory.exists()) {
@@ -18,7 +18,7 @@ public class FileManagement {
         String filePath = folder + "/" + person.getPersonId() + ".xml";
         File file = new File(filePath);
         if (file.exists()) {
-            throw new IOException("Cannot assign person with duplicate ID: " + person.getPersonId());
+            System.out.println("Cannot assign person with duplicate ID: " + person.getPersonId());
         }
 
         try {

@@ -1,11 +1,7 @@
 package javaTask.task;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class EmployeeDatabase {
-    private static final String EXTERNAL_FOLDER = "external";
-    private static final String INTERNAL_FOLDER = "internal";
 
     public EmployeeDatabase() {}
 
@@ -24,7 +20,7 @@ public class EmployeeDatabase {
         return foundEmployee;
     }
 
-    public void create(Person person) throws IOException {
+    public void create(Person person) {
         if (person != null) {
             FileManagement.addEmployeeToFile(person, Type.INTERNAL);
         }
