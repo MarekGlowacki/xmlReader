@@ -49,7 +49,7 @@ public class FileManagement {
         File[] externalFiles = externalDirectory.listFiles();
         if (externalFiles != null) {
             for (File file : externalFiles) {
-                if (file.isFile() && file.getName().startsWith(personId)) {
+                if (file.isFile() && file.getName().equals(personId + ".xml")) {
                     file.delete();
                     return true;
                 }
@@ -59,7 +59,7 @@ public class FileManagement {
         File[] internalFiles = internalDirectory.listFiles();
         if (internalFiles != null) {
             for (File file : internalFiles) {
-                if (file.isFile() && file.getName().startsWith(personId)) {
+                if (file.isFile() && file.getName().equals(personId + ".xml")) {
                     file.delete();
                     return true;
                 }
